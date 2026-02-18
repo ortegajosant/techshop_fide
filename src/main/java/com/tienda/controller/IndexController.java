@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
-public class IntexController {
+public class IndexController {
 
     private final ProductoService productoService;
     private final CategoriaService categoriaService;
 
-    public IntexController(ProductoService productoService, CategoriaService categoriaService) {
+    public IndexController(ProductoService productoService, CategoriaService categoriaService) {
         this.productoService = productoService;
         this.categoriaService = categoriaService;
     }
