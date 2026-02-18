@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.tienda;
 
 import com.google.auth.oauth2.GoogleCredentials;
@@ -15,20 +11,15 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
-
-/**
- *
- * @author Jose Ortega
- */
 @Configuration
 public class StorageConfig {
-    
+
     @Value("${firebase.json.path}")
     private String jsonPath;
-    
+
     @Value("${firebase.json.file}")
     private String jsonFile;
-    
+
     @Bean
     public Storage storage() throws IOException {
         ClassPathResource resource = new ClassPathResource(jsonPath + File.separator + jsonFile);
@@ -37,4 +28,5 @@ public class StorageConfig {
             return StorageOptions.newBuilder().setCredentials(credentials).build().getService();
         }
     }
+    
 }
